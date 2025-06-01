@@ -1,7 +1,10 @@
 FROM php:8.1-apache
 
-# Salin semua file ke dalam folder web server Apache
+# Copy semua file PHP ke folder web Apache
 COPY . /var/www/html/
 
-# Aktifkan mod_rewrite (opsional, jika pakai .htaccess)
+# Buka port 80
+EXPOSE 80
+
+# Aktifkan modul rewrite (jika perlu .htaccess)
 RUN a2enmod rewrite
